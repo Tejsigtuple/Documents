@@ -75,5 +75,9 @@ After completing these steps, the nila_compose application should be installed a
 
 For further assistance or questions, please contact the support team.
 
+## 6. Overall Flow
+
+![htmlCode_page-0001](https://github.com/user-attachments/assets/314ced33-04f7-4e0d-b504-53c7f11b3023)
+
 
 
