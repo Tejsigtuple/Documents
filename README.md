@@ -1,4 +1,11 @@
-# Package Installation Guide
+<div align="center">
+   
+   # Package Installation Guide
+</div>
+
+<br>
+
+# Phase I
 
 ## 1. Introduction
 
@@ -75,9 +82,66 @@ After completing these steps, the nila_compose application should be installed a
 
 For further assistance or questions, please contact the support team.
 
-## 6. Overall Flow
+## 6. Phase I Overall Flow
 
 ![htmlCode_page-0001](https://github.com/user-attachments/assets/314ced33-04f7-4e0d-b504-53c7f11b3023)
 
+# Phase II
+
+## 7. Pylon Installation
+
+- Visit the Basler website to download the Pylon Camera Software Suite for Linux.
+- The URL is usually something like Basler Pylon Download.
+- Select the appropriate version of the Pylon package for your system (e.g., 64-bit Debian package).
+- Download the ".deb" file to your system. For example, the file might be named pylon_6.2.0.21469-deb0_amd64.deb.
+- Open your terminal. Change directory to where the ".deb" file is downloaded. For example:
+   ```
+   sudo ~/Downloads
+   ```
+-  Use "dpkg" to install the Pylon package:
+   ```
+   sudo dpkg -i pylon_6.2.0.21469-deb0_amd64.deb
+   ```
+- If there are any missing dependencies, fix them using:
+   ```
+   sudo apt-get install -f
+   ```
+- Check if the installation was successful by listing the installed pylon packages:
+   ```
+   dpkg -l | grep pylon
+   ```
+- It is recommended to reboot your system after installation to ensure all settings take effect:
+   ```
+   sudo reboot
+   ```
+### Additional Notes
+- Ensure you have downloaded the correct version of the Pylon software that matches your operating system's architecture (e.g., 64-bit).
+- After installation, you can use the Pylon Viewer and other tools provided by the Pylon Camera Software Suite to interface with your Basler camera.
+
+## 8. Import files from other device
+
+### 8.1 Steps to Connect to a Device
+1. Open your terminal application.
+2. Use the following SSH command to connect to the remote device. Replace user with the appropriate username and 192.168.1.xxx with the IP address of the remote device.
+   ```
+   ssh user@192.168.1.100
+   ```
+3. Once connected, navigate to the sigtuple_dev folder located in the Desktop directory. Use the following command:
+   ```
+   cd ~/Desktop/sigtuple_dev
+   ```
+4. Copy the full path of the sigtuple_dev folder for later use. You can use the pwd command to print the working directory path:
+   ```
+   pwd
+   ```
+5. After copying the path, exit the SSH session by typing:
+   ```
+   exit
+   ```
+6. Use the 'scp' command to copy the entire 'sigtuple_dev' folder from the remote device to your local machine. Replace 'user' with the appropriate username, '192.168.1.100' with the IP address of the remote device, and adjust the destination path as necessary.
+   ```
+   scp -r user@192.168.1.100:~/Desktop/sigtuple_dev ~/local_destination_path
+   ```
+7. This command recursively copies the 'sigtuple_dev' folder from the remote device to the specified directory on your local machine (~/local_destination_path).
 
 
