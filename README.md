@@ -164,6 +164,7 @@ For further assistance or questions, please contact the support team.
    ```
    .venv/bin/python leapapp.py
    ```
+3. Once the leapapp.py script is running, you will be able to control the device via the LeapApp console.
 
 
 
