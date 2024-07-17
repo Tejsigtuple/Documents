@@ -47,9 +47,9 @@ This guide provides step-by-step instructions for installing the nila_compose pa
    cd nila_compose
    ```
 10. Run the prepare_device.sh script:
-   ```
-   sudo bash prepare_device.sh
-   ```
+      ```
+      sudo bash prepare_device.sh
+      ```
 
 ### 3.4 Launch and Configure the Application
 
