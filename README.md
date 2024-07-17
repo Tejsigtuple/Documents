@@ -126,22 +126,47 @@ For further assistance or questions, please contact the support team.
    ```
    ssh user@192.168.1.100
    ```
-3. Once connected, navigate to the sigtuple_dev folder located in the Desktop directory. Use the following command:
+### Copy the Folder to Your Local Machine
+1. Once connected, navigate to the sigtuple_dev folder located in the Desktop directory. Use the following command:
    ```
    cd ~/Desktop/sigtuple_dev
    ```
-4. Copy the full path of the sigtuple_dev folder for later use. You can use the pwd command to print the working directory path:
+2. Copy the full path of the sigtuple_dev folder for later use. You can use the pwd command to print the working directory path:
    ```
    pwd
    ```
-5. After copying the path, exit the SSH session by typing:
+3. After copying the path, exit the SSH session by typing:
    ```
    exit
    ```
-6. Use the 'scp' command to copy the entire 'sigtuple_dev' folder from the remote device to your local machine. Replace 'user' with the appropriate username, '192.168.1.100' with the IP address of the remote device, and adjust the destination path as necessary.
+4. Use the 'scp' command to copy the entire 'sigtuple_dev' folder from the remote device to your local machine. Replace 'user' with the appropriate username, '192.168.1.100' with the IP address of the remote device, and adjust the destination path as necessary.
    ```
    scp -r user@192.168.1.100:~/Desktop/sigtuple_dev ~/local_destination_path
    ```
-7. This command recursively copies the 'sigtuple_dev' folder from the remote device to the specified directory on your local machine (~/local_destination_path).
+5. This command recursively copies the 'sigtuple_dev' folder from the remote device to the specified directory on your local machine (~/local_destination_path).
+## 9.0 To Establish the Connection between Hardware & Local Machine
+### 9.1 List Connected Ports:
+1. Open your terminal application.
+2. Use the 'ls' command with 'grep' to find ports.
+   ```
+   ls /dev | grep ttyAC
+   ```
+3. This will list all devices connected to ports that match ttyAC.
+### 9.2 Set Permissions:
+5. Set read and write permissions using 'chmod':
+   ```
+   sudo chmod 666 /dev/ttyACM*
+   ```
+6. This command sets the permission of all devices matching ttyACM* to be readable and writable by all users.
+### 9.3 Navigate to the SigtupleDev Directory:
+1. Change to your project directory where your virtual environment and script are located.
+2. Use the Python interpreter from your virtual environment to run the script:
+   ```
+   .venv/bin/python leapapp.py
+   ```
+
+
+
+
 
 
